@@ -11,7 +11,7 @@ pipeline {
         stage('Obtener código fuente') {
             steps {
                 deleteDir()
-                sh 'git config --global --add safe.directory /workspace'
+                sh 'git config --global --add safe.directory /workspace/.git'
                 sh 'git clone file:///workspace .'
             }
         }
