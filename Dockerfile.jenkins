@@ -4,6 +4,8 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates curl git libicu76 pandoc python3 \
+    && git config --system --add safe.directory /workspace \
+    && git config --system --add safe.directory /workspace/.git \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh \
